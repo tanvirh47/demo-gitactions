@@ -12,7 +12,7 @@ on:
 
 jobs:
    read_the_file: 
-      runs-on: ubuntu-latest
+      runs-on:  self-hosted
       steps:
         - name: Git Checkout korte hobe
           uses: actions/checkout@v2
