@@ -18,5 +18,5 @@ jobs:
           uses: actions/checkout@v2
         - name: Read the Txt file
           run: | 
-            ls -l 
+            pm2 status 
            
