@@ -13,14 +13,13 @@ jobs:
   read_the_file: 
     runs-on: self-hosted
     steps:
-      - name: Git Checkout korte hobe
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: PM2 Status
-  shell: bash
-  run: |
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-    nvm use default
-    pm2 status
+        shell: bash
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+          nvm use default
+          pm2 status
