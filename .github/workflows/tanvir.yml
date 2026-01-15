@@ -17,4 +17,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: PM2 Status
-        run: pm2 status
+  shell: bash
+  run: |
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+    nvm use default
+    pm2 status
