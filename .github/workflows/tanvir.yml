@@ -19,4 +19,4 @@ jobs:
         - name: Read the Txt file
           run: | 
             ls -l 
-            cat tanvir.txt
+           
