@@ -17,7 +17,8 @@ jobs:
         - name: Git Checkout korte hobe
           uses: actions/checkout@v2
         - name: Read the Txt file
-          run: | 
-            /home/ubuntu/.nvm/versions/node/v25.3.0/bin/pm2 status
+          - run: |
+          pm2 status
+
 
            
