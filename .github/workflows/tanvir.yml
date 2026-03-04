@@ -24,7 +24,11 @@ jobs:
       steps:
        - name: Checkout repo
          uses: actions/checkout@v2
+       
 
+       - name: print user inputs
+         run: |
+             echo "user input: ${{github.event.inputs.example_input}}"
        - name: print contents of txt file
          run : |
           cat tanvir.txt
