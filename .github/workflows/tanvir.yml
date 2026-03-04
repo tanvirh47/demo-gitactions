@@ -1,25 +1,24 @@
 name: Print Txt file
 
-on: 
-  push:
-    branches:
-      - main
-      - tanvir
-  pull_request:
-    branches:
-      - main  
 
-jobs:
-  read_the_file: 
-    runs-on: self-hosted
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+on:
+ workflow_dispatch:
 
-      - name: PM2 Status
-        shell: bash
-        run: |
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-          nvm use default
-          pm2 status
+
+
+
+ jobs: 
+     print_txt:
+      runs-on: ubuntu-latest
+
+
+      steps:
+       - name: Checkout repo
+         uses: actions/checkout@v2
+
+       - name: print contents of txt file
+         run : |
+          cat tanvir.txt
+          
+            
+
