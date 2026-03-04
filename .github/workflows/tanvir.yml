@@ -2,15 +2,15 @@ name: Print Txt file
 
 
 on:
- workflow_dispatch:
- inputs:
-   example_input:
-      description: 'choose your server'
-      required: true
-      type: choice
-      default: 'staging'
+  workflow_dispatch:
+    inputs:
+      example_input:
+       description: 'choose your server'
+       required: true
+       type: choice
+       default: 'staging'
 
-      options:
+       options:
         - staging
         - production
 
