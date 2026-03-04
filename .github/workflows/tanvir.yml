@@ -1,52 +1,42 @@
-name: Print Txt file
-
+name: Print Txt file 
 
 on:
   workflow_dispatch:
     inputs:
       example_input:
-       description: 'choose your server'
-       required: true
-       type: choice
-       default: 'staging'
-
-       options:
-        - staging
-        - production
-
-
+        description: 'choose your server'
+        required: true
+        type: choice
+        default: 'staging'
+        options:
+          - staging
+          - production
 
 jobs: 
-    print_txt:
-      runs-on: ubuntu-latest
+  print_txt:
+    runs-on: ubuntu-latest
 
-
-      steps:
-       - name: Checkout repo
-         uses: actions/checkout@v2
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
        
+      - name: print user inputs
+        run: |
+          echo "user input: ${{ github.event.inputs.example_input }}"
 
-       - name: print user inputs
-         run: |
-             echo "user input: ${{github.event.inputs.example_input}}"
-       - name: check the user input 
-         run: |
-            if[ "${{ github.event.inputs.example_input }}"= "staging" ]; then
-              echo "you chose staging server"
+      - name: check the user input 
+        run: |
+          if [ "${{ github.event.inputs.example_input }}" = "staging" ]; then
+            echo "you chose staging server"
 
-            elif[ "${{github.event.inputs.example_input }}"= "production" ]; then
-              echo "you chose production server"
-            else 
-             echo "invalid input"
-             exit 1 
-            fi    
+          elif [ "${{ github.event.inputs.example_input }}" = "production" ]; then
+            echo "you chose production server"
+
+          else 
+            echo "invalid input"
+            exit 1 
+          fi    
             
-       
-       - name: print contents of txt file
-         run : |
+      - name: print contents of txt file
+        run: |
           cat tanvir.txt
-
-       
-
-
-
