@@ -31,10 +31,10 @@ jobs:
              echo "user input: ${{github.event.inputs.example_input}}"
        - name: check the user input 
          run: |
-            if["${{github.event.inputs.example_input}}"= "staging"];then
+            if[ "${{ github.event.inputs.example_input }}"= "staging" ]; then
               echo "you chose staging server"
 
-            elif["${{github.event.inputs.example_input}}"= "production"];then
+            elif[ "${{github.event.inputs.example_input }}"= "production" ]; then
               echo "you chose production server"
             else 
              echo "invalid input"
